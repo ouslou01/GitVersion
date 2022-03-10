@@ -25,6 +25,7 @@ internal class GitVersionApp
                 EnrichLogger(context);
                 await next(context);
             })
+            .ParseResponseFileAs(ResponseFileHandling.ParseArgsAsSpaceSeparated)
             .UseDefaults()
             .Build()
             .InvokeAsync(args);
